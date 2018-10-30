@@ -216,7 +216,7 @@ set_property PACKAGE_PIN M5 [get_ports {MEMCLK}]
 
 # Global constraints
 
-set_property INTERNAL_VREF  0.750 [get_iobanks 33]
+#set_property INTERNAL_VREF  0.750 [get_iobanks 33]
 set_property INTERNAL_VREF  0.750 [get_iobanks 34]
 set_property DCI_CASCADE 34 [get_iobanks 35]
 set_property INTERNAL_VREF  0.750 [get_iobanks 35]
