@@ -8,3 +8,5 @@ features of Xilinx Zynq and can be simulated by Free Software tools (Icarus Veri
 modules. Everything in plain Verilog and constraints.
 
 Detailed description of the project is available in the blog post: http://blog.elphel.com/2014/06/ddr3-memory-interface-on-xilinx-zynq-soc-free-software-compatible/
+
+This fork of eddr3 is created to be modified to run on VC707 eval board using the 1GB SODIMM.
