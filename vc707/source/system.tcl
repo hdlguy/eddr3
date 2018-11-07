@@ -43,8 +43,8 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 
 set list_projs [get_projects -quiet]
 if { $list_projs eq "" } {
-   create_project project_1 myproj -part xcku040-ffva1156-2-e
-   set_property BOARD_PART xilinx.com:kcu105:part0:1.3 [current_project]
+   create_project project_1 myproj -part xc7vx485tffg1761-2
+   set_property BOARD_PART xilinx.com:vc707:part0:1.3 [current_project]
 }
 
 
@@ -195,7 +195,6 @@ proc create_root_design { parentCell } {
   set_property -dict [ list \
    CONFIG.ADDR_WIDTH {12} \
    CONFIG.DATA_WIDTH {32} \
-   CONFIG.FREQ_HZ {125000000} \
    CONFIG.HAS_QOS {0} \
    CONFIG.HAS_REGION {0} \
    CONFIG.NUM_READ_OUTSTANDING {16} \
@@ -211,7 +210,7 @@ proc create_root_design { parentCell } {
   # Create ports
   set axi_aclk [ create_bd_port -dir O -type clk axi_aclk ]
   set_property -dict [ list \
-   CONFIG.ASSOCIATED_BUSIF {M01_AXI} \
+   CONFIG.ASSOCIATED_BUSIF {M00_AXI_0} \
  ] $axi_aclk
   set axi_aresetn [ create_bd_port -dir O -type rst axi_aresetn ]
   set pcie_perstn [ create_bd_port -dir I -type rst pcie_perstn ]
@@ -239,27 +238,32 @@ proc create_root_design { parentCell } {
   set util_ds_buf [ create_bd_cell -type ip -vlnv xilinx.com:ip:util_ds_buf:2.1 util_ds_buf ]
   set_property -dict [ list \
    CONFIG.C_BUF_TYPE {IBUFDSGTE} \
-   CONFIG.DIFF_CLK_IN_BOARD_INTERFACE {pcie_refclk} \
+   CONFIG.DIFF_CLK_IN_BOARD_INTERFACE {Custom} \
    CONFIG.USE_BOARD_FLOW {true} \
  ] $util_ds_buf
 
   # Create instance: xdma_0, and set properties
   set xdma_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:xdma:4.0 xdma_0 ]
   set_property -dict [ list \
-   CONFIG.PCIE_BOARD_INTERFACE {pci_express_x4} \
+   CONFIG.PCIE_BOARD_INTERFACE {Custom} \
    CONFIG.PF0_DEVICE_ID_mqdma {9014} \
    CONFIG.PF2_DEVICE_ID_mqdma {9014} \
    CONFIG.PF3_DEVICE_ID_mqdma {9014} \
-   CONFIG.SYS_RST_N_BOARD_INTERFACE {pcie_perstn} \
+   CONFIG.SYS_RST_N_BOARD_INTERFACE {Custom} \
    CONFIG.axi_data_width {64_bit} \
    CONFIG.axist_bypass_en {true} \
    CONFIG.axisten_freq {125} \
    CONFIG.cfg_mgmt_if {false} \
+   CONFIG.coreclk_freq {250} \
+   CONFIG.dedicate_perst {false} \
+   CONFIG.en_ext_ch_gt_drp {FALSE} \
+   CONFIG.pcie_blk_locn {X1Y0} \
    CONFIG.pf0_device_id {8014} \
    CONFIG.pl_link_cap_max_link_width {X4} \
    CONFIG.xdma_axi_intf_mm {AXI_Memory_Mapped} \
-   CONFIG.xdma_rnum_chnl {4} \
-   CONFIG.xdma_wnum_chnl {4} \
+   CONFIG.xdma_rnum_chnl {1} \
+   CONFIG.xdma_wnum_chnl {1} \
+   CONFIG.xlnx_ref_board {VC707} \
  ] $xdma_0
 
   # Create interface connections
@@ -275,7 +279,7 @@ proc create_root_design { parentCell } {
   connect_bd_net -net microblaze_0_Clk [get_bd_ports axi_aclk] [get_bd_pins axi_bram_ctrl_1/s_axi_aclk] [get_bd_pins microblaze_0_axi_periph/ACLK] [get_bd_pins microblaze_0_axi_periph/M00_ACLK] [get_bd_pins microblaze_0_axi_periph/M01_ACLK] [get_bd_pins microblaze_0_axi_periph/S00_ACLK] [get_bd_pins microblaze_0_axi_periph/S01_ACLK] [get_bd_pins xdma_0/axi_aclk]
   connect_bd_net -net pcie_perstn_1 [get_bd_ports pcie_perstn] [get_bd_pins xdma_0/sys_rst_n]
   connect_bd_net -net util_ds_buf_IBUF_DS_ODIV2 [get_bd_pins util_ds_buf/IBUF_DS_ODIV2] [get_bd_pins xdma_0/sys_clk]
-  connect_bd_net -net util_ds_buf_IBUF_OUT [get_bd_pins util_ds_buf/IBUF_OUT] [get_bd_pins xdma_0/sys_clk_gt]
+  connect_bd_net -net util_ds_buf_IBUF_OUT [get_bd_pins util_ds_buf/IBUF_OUT]
   connect_bd_net -net xdma_0_axi_aresetn [get_bd_ports axi_aresetn] [get_bd_pins axi_bram_ctrl_1/s_axi_aresetn] [get_bd_pins microblaze_0_axi_periph/ARESETN] [get_bd_pins microblaze_0_axi_periph/M00_ARESETN] [get_bd_pins microblaze_0_axi_periph/M01_ARESETN] [get_bd_pins microblaze_0_axi_periph/S00_ARESETN] [get_bd_pins microblaze_0_axi_periph/S01_ARESETN] [get_bd_pins xdma_0/axi_aresetn]
 
   # Create address segments

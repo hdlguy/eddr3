@@ -1,0 +1,53 @@
+//
+module  top #(
+   
+  system system_i  (
+        .M00_AXI_0_araddr(M00_AXI_0_araddr),
+        .M00_AXI_0_arburst(M00_AXI_0_arburst),
+        .M00_AXI_0_arcache(M00_AXI_0_arcache),
+        .M00_AXI_0_arlen(M00_AXI_0_arlen),
+        .M00_AXI_0_arlock(M00_AXI_0_arlock),
+        .M00_AXI_0_arprot(M00_AXI_0_arprot),
+        .M00_AXI_0_arqos(M00_AXI_0_arqos),
+        .M00_AXI_0_arready(M00_AXI_0_arready),
+        .M00_AXI_0_arregion(M00_AXI_0_arregion),
+        .M00_AXI_0_arsize(M00_AXI_0_arsize),
+        .M00_AXI_0_arvalid(M00_AXI_0_arvalid),
+        .M00_AXI_0_awaddr(M00_AXI_0_awaddr),
+        .M00_AXI_0_awburst(M00_AXI_0_awburst),
+        .M00_AXI_0_awcache(M00_AXI_0_awcache),
+        .M00_AXI_0_awlen(M00_AXI_0_awlen),
+        .M00_AXI_0_awlock(M00_AXI_0_awlock),
+        .M00_AXI_0_awprot(M00_AXI_0_awprot),
+        .M00_AXI_0_awqos(M00_AXI_0_awqos),
+        .M00_AXI_0_awready(M00_AXI_0_awready),
+        .M00_AXI_0_awregion(M00_AXI_0_awregion),
+        .M00_AXI_0_awsize(M00_AXI_0_awsize),
+        .M00_AXI_0_awvalid(M00_AXI_0_awvalid),
+        .M00_AXI_0_bready(M00_AXI_0_bready),
+        .M00_AXI_0_bresp(M00_AXI_0_bresp),
+        .M00_AXI_0_bvalid(M00_AXI_0_bvalid),
+        .M00_AXI_0_rdata(M00_AXI_0_rdata),
+        .M00_AXI_0_rlast(M00_AXI_0_rlast),
+        .M00_AXI_0_rready(M00_AXI_0_rready),
+        .M00_AXI_0_rresp(M00_AXI_0_rresp),
+        .M00_AXI_0_rvalid(M00_AXI_0_rvalid),
+        .M00_AXI_0_wdata(M00_AXI_0_wdata),
+        .M00_AXI_0_wlast(M00_AXI_0_wlast),
+        .M00_AXI_0_wready(M00_AXI_0_wready),
+        .M00_AXI_0_wstrb(M00_AXI_0_wstrb),
+        .M00_AXI_0_wvalid(M00_AXI_0_wvalid),
+        //
+        .axi_aclk(axi_aclk),
+        .axi_aresetn(axi_aresetn),
+        //
+        .pcie_perstn(pcie_perstn),
+        .pcie_refclk_clk_n(pcie_refclk_clk_n),
+        .pcie_refclk_clk_p(pcie_refclk_clk_p),
+        .pcie_rxn(pcie_rxn),
+        .pcie_rxp(pcie_rxp),
+        .pcie_txn(pcie_txn),
+        .pcie_txp(pcie_txp)
+    );
+endmodule
+
