@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="io_delay_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="io_delay_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="500000001fs"></ZoomEndTime>
+      <Cursor1Time time="0fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="228"></NameColumnWidth>
+      <ValueColumnWidth column_width="93"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="10" />
+   <wvobject type="logic" fp_name="/io_delay_tb/clk">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/io_delay_tb/cntvaluein">
+      <obj_property name="ElementShortName">cntvaluein[4:0]</obj_property>
+      <obj_property name="ObjectShortName">cntvaluein[4:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/io_delay_tb/cntvalueout">
+      <obj_property name="ElementShortName">cntvalueout[4:0]</obj_property>
+      <obj_property name="ObjectShortName">cntvalueout[4:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/io_delay_tb/regrst">
+      <obj_property name="ElementShortName">regrst</obj_property>
+      <obj_property name="ObjectShortName">regrst</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/io_delay_tb/ld">
+      <obj_property name="ElementShortName">ld</obj_property>
+      <obj_property name="ObjectShortName">ld</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/io_delay_tb/refclk">
+      <obj_property name="ElementShortName">refclk</obj_property>
+      <obj_property name="ObjectShortName">refclk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/io_delay_tb/idelayctl_rdy">
+      <obj_property name="ElementShortName">idelayctl_rdy</obj_property>
+      <obj_property name="ObjectShortName">idelayctl_rdy</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/io_delay_tb/datain">
+      <obj_property name="ElementShortName">datain</obj_property>
+      <obj_property name="ObjectShortName">datain</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/io_delay_tb/idataout">
+      <obj_property name="ElementShortName">idataout</obj_property>
+      <obj_property name="ObjectShortName">idataout</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/io_delay_tb/odataout">
+      <obj_property name="ElementShortName">odataout</obj_property>
+      <obj_property name="ObjectShortName">odataout</obj_property>
+   </wvobject>
+</wave_config>

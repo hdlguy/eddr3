@@ -1,5 +1,5 @@
 //
-module ddr3_phy #(
+module dram_io #(
     parameter int  W = 8,  // width of dram interface in bytes.
     parameter int  CL = 16 // cas latency
 )(
