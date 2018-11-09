@@ -1,40 +1,85 @@
 //
 module dram_io #(
-    parameter int  W = 8,  // width of dram interface in bytes.
-    parameter int  CL = 16 // cas latency
+    parameter int  W = 8  // width of dram interface in bytes.
 )(
     // external dram pins
-    input               reset_n;
-    input  [1:0]        ck_p;
-    input  [1:0]        ck_n;
-    input  [1:0]        cke;
-    input  [1:0]        s_n;
-    input               ras_n;
-    input               cas_n;
-    input               we_n;
-    input  [2:0]        ba;
-    input  [15:0]       addr;
-    input  [1:0]        odt;
-    inout  [W-1:0]      dqs_p;
-    inout  [W-1:0]      dqs_n;
-    inout  [W*8-1:0]    dq;
-    inout  [W-1:0]      dm;
+    output logic              reset_n,
+    output logic [1:0]        ck_p,
+    output logic [1:0]        ck_n,
+    output logic [1:0]        cke,
+    output logic [1:0]        s_n,
+    output logic              ras_n,
+    output logic              cas_n,
+    output logic              we_n,
+    output logic [2:0]        ba,
+    output logic [15:0]       addr,
+    output logic [1:0]        odt,
+//    inout  logic [W-1:0]      dqs_p,
+//    inout  logic [W-1:0]      dqs_n,
+//    inout  logic [W*8-1:0]    dq,
+    output logic [W-1:0]      dm,
     // Internal signals
-    input               refclk;
-
+    input  logic              reset, // synchronouse to dclk.
+    input  logic              refclk,
+    input  logic              hsclk, // serdes ddr clock
+    input  logic              dclk   // clock for input data to serdes.
     // Training control
-
 );
 
     localparam DELGRP = "DRAM_DELAY_GRP";
 
-
     // one of these idelayctrl blocks must be instantiated when using IDELAY2 or ODELAY2 blocks with loadable delays.
     logic idelayctl_rdy;
     (* IODELAY_GROUP = DELGRP *) // Specifies group name for associated IDELAYs/ODELAYs and IDELAYCTRL
-    IDELAYCTRL IDELAYCTRL_inst ( .RDY(idelayctl_rdy), .REFCLK(refclk), .RST(regrst) );
+    IDELAYCTRL IDELAYCTRL_inst ( .RDY(idelayctl_rdy), .REFCLK(refclk), .RST(reset) );
 
+    // make the ck_p/n outputs with an oserdes and obufds.
+    logic ck_pre;
+    OSERDESE2 #(
+        .DATA_RATE_OQ("DDR"),   // DDR, SDR
+        .DATA_RATE_TQ("DDR"),   // DDR, BUF, SDR
+        .DATA_WIDTH(8),         // Parallel data width (2-8,10,14)
+        .INIT_OQ(1'b0),         // Initial value of OQ output (1'b0,1'b1)
+        .INIT_TQ(1'b0),         // Initial value of TQ output (1'b0,1'b1)
+        .SERDES_MODE("MASTER"), // MASTER, SLAVE
+        .SRVAL_OQ(1'b0),        // OQ output value when SR is used (1'b0,1'b1)
+        .SRVAL_TQ(1'b0),        // TQ output value when SR is used (1'b0,1'b1)
+        .TBYTE_CTL("FALSE"),    // Enable tristate byte operation (FALSE, TRUE)
+        .TBYTE_SRC("FALSE"),    // Tristate byte source (FALSE, TRUE)
+        .TRISTATE_WIDTH(4)      // 3-state converter width (1,4)
+    ) OSERDESE2_ck_inst (
+        .OFB(),             // 1-bit output: Feedback path for data
+        .OQ(ck_pre),               // 1-bit output: Data path output
+        .SHIFTOUT1(),
+        .SHIFTOUT2(),
+        .TBYTEOUT(),         // 1-bit output: Byte group tristate
+        .TFB(),              // 1-bit output: 3-state control
+        .TQ(),               // 1-bit output: 3-state control
+        .CLK(hsclk),         // 1-bit input: High speed clock
+        .CLKDIV(dclk),       // 1-bit input: Divided clock
+        .D1(1),
+        .D2(0),
+        .D3(1),
+        .D4(0),
+        .D5(1),
+        .D6(0),
+        .D7(1),
+        .D8(0),
+        .OCE(1),             // 1-bit input: Output data clock enable
+        .RST(reset),             // 1-bit input: Reset
+        .SHIFTIN1(0),
+        .SHIFTIN2(0),
+        .T1(0),
+        .T2(0),
+        .T3(0),
+        .T4(0),
+        .TBYTEIN(0),     // 1-bit input: Byte group tristate
+        .TCE(0)              // 1-bit input: 3-state clock enable
+    );    
+    OBUFDS #(.IOSTANDARD("DEFAULT"),.SLEW("SLOW")) OBUFDS_ck1_inst (.O(ck_p[1]),.OB(ck_n[1]),.I(ck_pre));
+    OBUFDS #(.IOSTANDARD("DEFAULT"),.SLEW("SLOW")) OBUFDS_ck0_inst (.O(ck_p[0]),.OB(ck_n[0]),.I(ck_pre));
 
+/*
     (* IODELAY_GROUP = DELGRP *) // Specifies group name for associated IDELAYs/ODELAYs and IDELAYCTRL   
     ODELAYE2 #(
         .CINVCTRL_SEL("FALSE"),     // Enable dynamic clock inversion (FALSE, TRUE)
@@ -228,6 +273,7 @@ module dram_io #(
         .TBYTEIN(TBYTEIN),     // 1-bit input: Byte group tristate
         .TCE(TCE)              // 1-bit input: 3-state clock enable
     );
+*/
 
 endmodule
 
