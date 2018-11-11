@@ -22,8 +22,9 @@ file mkdir ./ip
 #add_files -norecurse ../4096Mb_ddr3_parameters.vh 
 add_files -norecurse ../1024Mb_ddr3_parameters.vh
 
-read_verilog  -sv ../ddr3.v
-read_verilog  ../tb.v
+read_verilog -sv ../ddr3.v
+read_verilog -sv ../command_decode.sv
+read_verilog     ../tb.v
 
 add_files -fileset sim_1 -norecurse ./tb_behav.wcfg
 

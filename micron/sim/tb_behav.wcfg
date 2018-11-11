@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="61000001fs"></ZoomEndTime>
+      <Cursor1Time time="0fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="306"></NameColumnWidth>
+      <ValueColumnWidth column_width="66"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="48" />
+   <wvobject type="array" fp_name="/tb/TZQCS">
+      <obj_property name="ElementShortName">TZQCS[31:0]</obj_property>
+      <obj_property name="ObjectShortName">TZQCS[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/TZQINIT">
+      <obj_property name="ElementShortName">TZQINIT[31:0]</obj_property>
+      <obj_property name="ObjectShortName">TZQINIT[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/TZQOPER">
+      <obj_property name="ElementShortName">TZQOPER[31:0]</obj_property>
+      <obj_property name="ObjectShortName">TZQOPER[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/rst_n">
+      <obj_property name="ElementShortName">rst_n</obj_property>
+      <obj_property name="ObjectShortName">rst_n</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/ck">
+      <obj_property name="ElementShortName">ck</obj_property>
+      <obj_property name="ObjectShortName">ck</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/ck_n">
+      <obj_property name="ElementShortName">ck_n</obj_property>
+      <obj_property name="ObjectShortName">ck_n</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/cke">
+      <obj_property name="ElementShortName">cke</obj_property>
+      <obj_property name="ObjectShortName">cke</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/cs_n">
+      <obj_property name="ElementShortName">cs_n</obj_property>
+      <obj_property name="ObjectShortName">cs_n</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/ras_n">
+      <obj_property name="ElementShortName">ras_n</obj_property>
+      <obj_property name="ObjectShortName">ras_n</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/cas_n">
+      <obj_property name="ElementShortName">cas_n</obj_property>
+      <obj_property name="ObjectShortName">cas_n</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/we_n">
+      <obj_property name="ElementShortName">we_n</obj_property>
+      <obj_property name="ObjectShortName">we_n</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/ba">
+      <obj_property name="ElementShortName">ba[2:0]</obj_property>
+      <obj_property name="ObjectShortName">ba[2:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/a">
+      <obj_property name="ElementShortName">a[12:0]</obj_property>
+      <obj_property name="ObjectShortName">a[12:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/dm">
+      <obj_property name="ElementShortName">dm[1:0]</obj_property>
+      <obj_property name="ObjectShortName">dm[1:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/dq">
+      <obj_property name="ElementShortName">dq[15:0]</obj_property>
+      <obj_property name="ObjectShortName">dq[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/dq0">
+      <obj_property name="ElementShortName">dq0[15:0]</obj_property>
+      <obj_property name="ObjectShortName">dq0[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/dq1">
+      <obj_property name="ElementShortName">dq1[15:0]</obj_property>
+      <obj_property name="ObjectShortName">dq1[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/dqs">
+      <obj_property name="ElementShortName">dqs[1:0]</obj_property>
+      <obj_property name="ObjectShortName">dqs[1:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/dqs_n">
+      <obj_property name="ElementShortName">dqs_n[1:0]</obj_property>
+      <obj_property name="ObjectShortName">dqs_n[1:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/tdqs_n">
+      <obj_property name="ElementShortName">tdqs_n[1:0]</obj_property>
+      <obj_property name="ObjectShortName">tdqs_n[1:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/odt">
+      <obj_property name="ElementShortName">odt</obj_property>
+      <obj_property name="ObjectShortName">odt</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider48" type="divider">
+      <obj_property name="label">command decode</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/command_decode_inst/cmd">
+      <obj_property name="ElementShortName">cmd[31:0]</obj_property>
+      <obj_property name="ObjectShortName">cmd[31:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FF00FF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/mode_reg0">
+      <obj_property name="ElementShortName">mode_reg0[12:0]</obj_property>
+      <obj_property name="ObjectShortName">mode_reg0[12:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/mode_reg1">
+      <obj_property name="ElementShortName">mode_reg1[12:0]</obj_property>
+      <obj_property name="ObjectShortName">mode_reg1[12:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/mode_reg2">
+      <obj_property name="ElementShortName">mode_reg2[12:0]</obj_property>
+      <obj_property name="ObjectShortName">mode_reg2[12:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/cl">
+      <obj_property name="ElementShortName">cl[3:0]</obj_property>
+      <obj_property name="ObjectShortName">cl[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/bo">
+      <obj_property name="ElementShortName">bo</obj_property>
+      <obj_property name="ObjectShortName">bo</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/bl">
+      <obj_property name="ElementShortName">bl[3:0]</obj_property>
+      <obj_property name="ObjectShortName">bl[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/cwl">
+      <obj_property name="ElementShortName">cwl[3:0]</obj_property>
+      <obj_property name="ObjectShortName">cwl[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/al">
+      <obj_property name="ElementShortName">al[3:0]</obj_property>
+      <obj_property name="ObjectShortName">al[3:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/rl">
+      <obj_property name="ElementShortName">rl[4:0]</obj_property>
+      <obj_property name="ObjectShortName">rl[4:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/wl">
+      <obj_property name="ElementShortName">wl[4:0]</obj_property>
+      <obj_property name="ObjectShortName">wl[4:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/dq_en">
+      <obj_property name="ElementShortName">dq_en</obj_property>
+      <obj_property name="ObjectShortName">dq_en</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/dm_out">
+      <obj_property name="ElementShortName">dm_out[1:0]</obj_property>
+      <obj_property name="ObjectShortName">dm_out[1:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/dq_out">
+      <obj_property name="ElementShortName">dq_out[15:0]</obj_property>
+      <obj_property name="ObjectShortName">dq_out[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/dqs_en">
+      <obj_property name="ElementShortName">dqs_en</obj_property>
+      <obj_property name="ObjectShortName">dqs_en</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/dqs_out">
+      <obj_property name="ElementShortName">dqs_out[1:0]</obj_property>
+      <obj_property name="ObjectShortName">dqs_out[1:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/dm_fifo">
+      <obj_property name="ElementShortName">dm_fifo[66:0][1:0]</obj_property>
+      <obj_property name="ObjectShortName">dm_fifo[66:0][1:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/dq_fifo">
+      <obj_property name="ElementShortName">dq_fifo[66:0][15:0]</obj_property>
+      <obj_property name="ObjectShortName">dq_fifo[66:0][15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/q0">
+      <obj_property name="ElementShortName">q0[15:0]</obj_property>
+      <obj_property name="ObjectShortName">q0[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/q1">
+      <obj_property name="ElementShortName">q1[15:0]</obj_property>
+      <obj_property name="ObjectShortName">q1[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/q2">
+      <obj_property name="ElementShortName">q2[15:0]</obj_property>
+      <obj_property name="ObjectShortName">q2[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/q3">
+      <obj_property name="ElementShortName">q3[15:0]</obj_property>
+      <obj_property name="ObjectShortName">q3[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/ptr_rst_n">
+      <obj_property name="ElementShortName">ptr_rst_n</obj_property>
+      <obj_property name="ObjectShortName">ptr_rst_n</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/burst_cntr">
+      <obj_property name="ElementShortName">burst_cntr[1:0]</obj_property>
+      <obj_property name="ObjectShortName">burst_cntr[1:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/tb/odt_out">
+      <obj_property name="ElementShortName">odt_out</obj_property>
+      <obj_property name="ObjectShortName">odt_out</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/tb/odt_fifo">
+      <obj_property name="ElementShortName">odt_fifo[16:0]</obj_property>
+      <obj_property name="ObjectShortName">odt_fifo[16:0]</obj_property>
+   </wvobject>
+</wave_config>
