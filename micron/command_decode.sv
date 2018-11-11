@@ -57,6 +57,9 @@ module command_decode #(
             default: cmd = UNK;
         endcase
     end
+    
+    logic [10:0] CA;
+    assign CA = {addr[11], addr[9:0]};
 
 
 endmodule;
