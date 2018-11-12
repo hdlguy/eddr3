@@ -183,7 +183,7 @@ module tb;
 
     command_decode #(
         .BYTES(2),
-        .ADDR_BITS(16)
+        .ADDR_BITS(13)
     ) command_decode_inst (
         .rst_n(rst_n),
         .ck(ck), 

@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="mmcm_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="mmcm_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="12294512fs"></ZoomEndTime>
+      <Cursor1Time time="0fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="298"></NameColumnWidth>
+      <ValueColumnWidth column_width="66"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="17" />
+   <wvobject type="logic" fp_name="/mmcm_tb/clk">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/mmcm_tb/clkin">
+      <obj_property name="ElementShortName">clkin</obj_property>
+      <obj_property name="ObjectShortName">clkin</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/mmcm_tb/dclk">
+      <obj_property name="ElementShortName">dclk</obj_property>
+      <obj_property name="ObjectShortName">dclk</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/mmcm_tb/pll_drp_di">
+      <obj_property name="ElementShortName">pll_drp_di[15:0]</obj_property>
+      <obj_property name="ObjectShortName">pll_drp_di[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/mmcm_tb/pll_drp_do">
+      <obj_property name="ElementShortName">pll_drp_do[15:0]</obj_property>
+      <obj_property name="ObjectShortName">pll_drp_do[15:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/mmcm_tb/pll_drp_daddr">
+      <obj_property name="ElementShortName">pll_drp_daddr[6:0]</obj_property>
+      <obj_property name="ObjectShortName">pll_drp_daddr[6:0]</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/mmcm_tb/pll_drp_den">
+      <obj_property name="ElementShortName">pll_drp_den</obj_property>
+      <obj_property name="ObjectShortName">pll_drp_den</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/mmcm_tb/pll_drp_dwe">
+      <obj_property name="ElementShortName">pll_drp_dwe</obj_property>
+      <obj_property name="ObjectShortName">pll_drp_dwe</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/mmcm_tb/pll_drp_drdy">
+      <obj_property name="ElementShortName">pll_drp_drdy</obj_property>
+      <obj_property name="ObjectShortName">pll_drp_drdy</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/mmcm_tb/pll_clockout">
+      <obj_property name="ElementShortName">pll_clockout[5:0]</obj_property>
+      <obj_property name="ObjectShortName">pll_clockout[5:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/mmcm_tb/pllclk">
+      <obj_property name="ElementShortName">pllclk[5:0]</obj_property>
+      <obj_property name="ObjectShortName">pllclk[5:0]</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/mmcm_tb/clkfb">
+      <obj_property name="ElementShortName">clkfb</obj_property>
+      <obj_property name="ObjectShortName">clkfb</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/mmcm_tb/clkin">
+      <obj_property name="ElementShortName">clkin</obj_property>
+      <obj_property name="ObjectShortName">clkin</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/mmcm_tb/pll_locked">
+      <obj_property name="ElementShortName">pll_locked</obj_property>
+      <obj_property name="ObjectShortName">pll_locked</obj_property>
+      <obj_property name="CustomSignalColor">#FF0000</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/mmcm_tb/reset">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/mmcm_tb/clk_period">
+      <obj_property name="ElementShortName">clk_period[31:0]</obj_property>
+      <obj_property name="ObjectShortName">clk_period[31:0]</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/mmcm_tb/dclk_period">
+      <obj_property name="ElementShortName">dclk_period[31:0]</obj_property>
+      <obj_property name="ObjectShortName">dclk_period[31:0]</obj_property>
+   </wvobject>
+</wave_config>
