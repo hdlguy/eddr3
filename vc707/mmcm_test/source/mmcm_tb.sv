@@ -3,15 +3,15 @@
 module mmcm_tb();
 
     // 200MHz reference clock
-    localparam clk_period = 5;
-    logic clk, clkin;
+    localparam refclk_period = 8;
+    logic refclk, clkin;
     initial forever begin
-        clk = 0;
-        #(clk_period/2);
-        clk = 1;
-        #(clk_period/2);
+        refclk = 0;
+        #(refclk_period/2);
+        refclk = 1;
+        #(refclk_period/2);
     end
-    assign clkin = clk;
+    assign clkin = refclk;
     
     // 100MHz DRP clock
     localparam dclk_period = 100;
@@ -34,7 +34,7 @@ module mmcm_tb();
     logic reset;
     initial begin
         reset = 1;
-        #(clk_period*20)
+        #(refclk_period*20)
         reset = 0;
     end
 
@@ -142,7 +142,6 @@ module mmcm_tb();
     ) OSERDESE2_dq_inst (
         .OFB(),             // 1-bit output: Feedback path for data
         .OQ(dq_pre),               // 1-bit output: Data path output
-        // SHIFTOUT1 / SHIFTOUT2: 1-bit (each) output: Data output expansion (1-bit each)
         .SHIFTOUT1(),
         .SHIFTOUT2(),
         .TBYTEOUT(),   // 1-bit output: Byte group tristate
@@ -150,6 +149,8 @@ module mmcm_tb();
         .TQ(),               // 1-bit output: 3-state control
         .CLK(pllclk[0]),             // 1-bit input: High speed clock
         .CLKDIV(pllclk[2]),       // 1-bit input: Divided clock
+//        .CLK(clk),             // 1-bit input: High speed clock
+//        .CLKDIV(clkdiv),       // 1-bit input: Divided clock        
         .D1(1'b1),
         .D2(1'b0),
         .D3(1'b1),
@@ -159,7 +160,7 @@ module mmcm_tb();
         .D7(1'b0),
         .D8(1'b0),
         .OCE(1'b1),             // 1-bit input: Output data clock enable
-        .RST(reset),             // 1-bit input: Reset
+        .RST(~pll_locked),             // 1-bit input: Reset
         .SHIFTIN1(1'b0),
         .SHIFTIN2(1'b0),
         .T1(1'b0),
