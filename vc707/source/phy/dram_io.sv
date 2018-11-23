@@ -19,19 +19,18 @@ module dram_io #(
 //    inout  logic [W*8-1:0]    dq,
     output logic [W-1:0]      dm,
     // Internal signals
-    input  logic              reset, // synchronouse to dclk.
-    input  logic              refclk,
-    input  logic              hsclk, // serdes ddr clock
-    input  logic              dclk   // clock for input data to serdes.
+    input  logic              reset,  // synchronouse to dclk.
+    input  logic              refclk, // reference clock for io delay stuff, usually 200MHz.
+    input  logic              hsclk,  // serdes ddr clock
+    input  logic              dclk    // clock for input data to serdesr, 1/8 of hsclk.
     // Training control
 );
 
-    localparam DELGRP = "DRAM_DELAY_GRP";
+    localparam int DELGRP = 0;
 
     // one of these idelayctrl blocks must be instantiated when using IDELAY2 or ODELAY2 blocks with loadable delays.
     logic idelayctl_rdy;
-    (* IODELAY_GROUP = DELGRP *) // Specifies group name for associated IDELAYs/ODELAYs and IDELAYCTRL
-    IDELAYCTRL IDELAYCTRL_inst ( .RDY(idelayctl_rdy), .REFCLK(refclk), .RST(reset) );
+    (* IODELAY_GROUP = DELGRP *) IDELAYCTRL IDELAYCTRL_inst ( .RDY(idelayctl_rdy), .REFCLK(refclk), .RST(reset) );
 
     // make the ck_p/n outputs with an oserdes and obufds.
     logic ck_pre;
