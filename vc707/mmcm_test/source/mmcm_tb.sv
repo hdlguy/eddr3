@@ -148,9 +148,7 @@ module mmcm_tb();
         .TFB(),             // 1-bit output: 3-state control
         .TQ(),               // 1-bit output: 3-state control
         .CLK(pllclk[0]),             // 1-bit input: High speed clock
-        .CLKDIV(pllclk[2]),       // 1-bit input: Divided clock
-//        .CLK(clk),             // 1-bit input: High speed clock
-//        .CLKDIV(clkdiv),       // 1-bit input: Divided clock        
+        .CLKDIV(pllclk[2]),       // 1-bit input: Divided clock    
         .D1(1'b1),
         .D2(1'b0),
         .D3(1'b1),

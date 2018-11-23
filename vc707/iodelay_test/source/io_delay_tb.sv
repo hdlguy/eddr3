@@ -106,13 +106,9 @@ module io_delay_tb();
         #(refclk_period/2);
     end
     
+    // This is probably not needed for simulation but in hardware you must have this control block.
     logic idelayctl_rdy;
-    (* IODELAY_GROUP = 0 *) // Specifies group name for associated IDELAYs/ODELAYs and IDELAYCTRL
-    IDELAYCTRL IDELAYCTRL_inst (
-        .RDY(idelayctl_rdy),// 1-bit output: Ready output
-        .REFCLK(refclk), // 1-bit input: Reference clock input
-        .RST(regrst)// 1-bit input: Active high reset input
-    );
+    (* IODELAY_GROUP = 0 *) IDELAYCTRL IDELAYCTRL_inst ( .RDY(idelayctl_rdy), .REFCLK(refclk), .RST(regrst));
 
 
 endmodule
