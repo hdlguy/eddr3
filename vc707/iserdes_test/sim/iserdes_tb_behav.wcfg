@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="iserdes_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="glbl" />
+            <top_module name="iserdes_tb" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="382500001fs"></ZoomEndTime>
+      <Cursor1Time time="0fs"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="190"></NameColumnWidth>
+      <ValueColumnWidth column_width="66"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="17" />
+   <wvobject type="logic" fp_name="/iserdes_tb/hsclk">
+      <obj_property name="ElementShortName">hsclk</obj_property>
+      <obj_property name="ObjectShortName">hsclk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/iserdes_tb/divclk">
+      <obj_property name="ElementShortName">divclk</obj_property>
+      <obj_property name="ObjectShortName">divclk</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/iserdes_tb/reset">
+      <obj_property name="ElementShortName">reset</obj_property>
+      <obj_property name="ObjectShortName">reset</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/iserdes_tb/din">
+      <obj_property name="ElementShortName">din</obj_property>
+      <obj_property name="ObjectShortName">din</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/iserdes_tb/q">
+      <obj_property name="ElementShortName">q[3:0]</obj_property>
+      <obj_property name="ObjectShortName">q[3:0]</obj_property>
+      <obj_property name="CustomSignalColor">#FF00FF</obj_property>
+      <obj_property name="UseCustomSignalColor">true</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/iserdes_tb/ld">
+      <obj_property name="ElementShortName">ld</obj_property>
+      <obj_property name="ObjectShortName">ld</obj_property>
+   </wvobject>
+   <wvobject type="array" fp_name="/iserdes_tb/dcount">
+      <obj_property name="ElementShortName">dcount[3:0]</obj_property>
+      <obj_property name="ObjectShortName">dcount[3:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="divider10" type="divider">
+      <obj_property name="label">uut</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/iserdes_tb/uut/RST">
+      <obj_property name="ElementShortName">RST</obj_property>
+      <obj_property name="ObjectShortName">RST</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/iserdes_tb/uut/CLK">
+      <obj_property name="ElementShortName">CLK</obj_property>
+      <obj_property name="ObjectShortName">CLK</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/iserdes_tb/uut/CLKB">
+      <obj_property name="ElementShortName">CLKB</obj_property>
+      <obj_property name="ObjectShortName">CLKB</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/iserdes_tb/uut/CLKDIV">
+      <obj_property name="ElementShortName">CLKDIV</obj_property>
+      <obj_property name="ObjectShortName">CLKDIV</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/iserdes_tb/uut/CLKDIVP">
+      <obj_property name="ElementShortName">CLKDIVP</obj_property>
+      <obj_property name="ObjectShortName">CLKDIVP</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/iserdes_tb/uut/OCLK">
+      <obj_property name="ElementShortName">OCLK</obj_property>
+      <obj_property name="ObjectShortName">OCLK</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/iserdes_tb/uut/OCLKB">
+      <obj_property name="ElementShortName">OCLKB</obj_property>
+      <obj_property name="ObjectShortName">OCLKB</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/iserdes_tb/uut/DDLY">
+      <obj_property name="ElementShortName">DDLY</obj_property>
+      <obj_property name="ObjectShortName">DDLY</obj_property>
+   </wvobject>
+   <wvobject type="logic" fp_name="/iserdes_tb/uut/BITSLIP">
+      <obj_property name="ElementShortName">BITSLIP</obj_property>
+      <obj_property name="ObjectShortName">BITSLIP</obj_property>
+   </wvobject>
+</wave_config>

@@ -9,7 +9,10 @@ set_property default_lib work [current_project]
 
 read_verilog -sv ../iserdes_tb.sv
 
-#add_files -fileset sim_1 -norecurse ./iserdes_tb_behav.wcfg
+add_files -fileset sim_1 -norecurse ./iserdes_tb_behav.wcfg
+
+set_property -name {xsim.elaborate.debug_level} -value {all} -objects [current_fileset -simset]
+set_property -name {xsim.simulate.runtime} -value {1000ns} -objects [current_fileset -simset]
 
 close_project
 
